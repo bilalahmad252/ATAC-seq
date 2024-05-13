@@ -1,0 +1,108 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job       count
+------  -------
+all           1
+fastqc        6
+total         7
+
+Select jobs to execute...
+
+[Thu Feb 22 21:42:39 2024]
+rule fastqc:
+    input: /homes/bilala/BedTools/Chipseq_2024/raw_data/SRR6823765.fastq
+    output: /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823765_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823765_fastqc.zip
+    jobid: 2
+    reason: Missing output files: /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823765_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823765_fastqc.zip
+    wildcards: output_directory=/homes/bilala/BedTools/Chipseq_2024/results/FASTQC, sample=SRR6823765
+    resources: tmpdir=/tmp
+
+[Thu Feb 22 21:44:28 2024]
+Finished job 2.
+1 of 7 steps (14%) done
+Select jobs to execute...
+
+[Thu Feb 22 21:44:28 2024]
+rule fastqc:
+    input: /homes/bilala/BedTools/Chipseq_2024/raw_data/SRR6823762.fastq
+    output: /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823762_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823762_fastqc.zip
+    jobid: 1
+    reason: Missing output files: /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823762_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823762_fastqc.html
+    wildcards: output_directory=/homes/bilala/BedTools/Chipseq_2024/results/FASTQC, sample=SRR6823762
+    resources: tmpdir=/tmp
+
+[Thu Feb 22 21:45:46 2024]
+Finished job 1.
+2 of 7 steps (29%) done
+Select jobs to execute...
+
+[Thu Feb 22 21:45:46 2024]
+rule fastqc:
+    input: /homes/bilala/BedTools/Chipseq_2024/raw_data/SRR6823770.fastq
+    output: /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823770_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823770_fastqc.zip
+    jobid: 8
+    reason: Missing output files: /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823770_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823770_fastqc.zip
+    wildcards: output_directory=/homes/bilala/BedTools/Chipseq_2024/results/FASTQC, sample=SRR6823770
+    resources: tmpdir=/tmp
+
+[Thu Feb 22 21:49:12 2024]
+Finished job 8.
+3 of 7 steps (43%) done
+Select jobs to execute...
+
+[Thu Feb 22 21:49:12 2024]
+rule fastqc:
+    input: /homes/bilala/BedTools/Chipseq_2024/raw_data/SRR6823773.fastq
+    output: /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823773_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823773_fastqc.zip
+    jobid: 6
+    reason: Missing output files: /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823773_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823773_fastqc.zip
+    wildcards: output_directory=/homes/bilala/BedTools/Chipseq_2024/results/FASTQC, sample=SRR6823773
+    resources: tmpdir=/tmp
+
+[Thu Feb 22 21:52:12 2024]
+Finished job 6.
+4 of 7 steps (57%) done
+Select jobs to execute...
+
+[Thu Feb 22 21:52:12 2024]
+rule fastqc:
+    input: /homes/bilala/BedTools/Chipseq_2024/raw_data/SRR6823767.fastq
+    output: /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823767_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823767_fastqc.zip
+    jobid: 3
+    reason: Missing output files: /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823767_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823767_fastqc.zip
+    wildcards: output_directory=/homes/bilala/BedTools/Chipseq_2024/results/FASTQC, sample=SRR6823767
+    resources: tmpdir=/tmp
+
+[Thu Feb 22 21:53:09 2024]
+Finished job 3.
+5 of 7 steps (71%) done
+Select jobs to execute...
+
+[Thu Feb 22 21:53:09 2024]
+rule fastqc:
+    input: /homes/bilala/BedTools/Chipseq_2024/raw_data/SRR6823771.fastq
+    output: /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823771_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823771_fastqc.zip
+    jobid: 4
+    reason: Missing output files: /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823771_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823771_fastqc.zip
+    wildcards: output_directory=/homes/bilala/BedTools/Chipseq_2024/results/FASTQC, sample=SRR6823771
+    resources: tmpdir=/tmp
+
+[Thu Feb 22 21:57:03 2024]
+Finished job 4.
+6 of 7 steps (86%) done
+Select jobs to execute...
+
+[Thu Feb 22 21:57:03 2024]
+localrule all:
+    input: /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823762_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823765_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823767_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823771_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823769_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823773_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823772_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823770_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823762_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823765_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823767_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823771_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823769_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823773_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823772_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823770_fastqc.zip
+    jobid: 0
+    reason: Input files updated by another job: /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823773_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823767_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823762_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823765_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823767_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823762_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823765_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823771_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823773_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823770_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823771_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823770_fastqc.zip
+    resources: tmpdir=/tmp
+
+[Thu Feb 22 21:57:04 2024]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: .snakemake/log/2024-02-22T214214.603740.snakemake.log

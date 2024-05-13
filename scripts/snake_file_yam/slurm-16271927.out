@@ -1,0 +1,8 @@
+Building DAG of jobs...
+MissingInputException in rule peak_calling in file /homes/bilala/BedTools/Chipseq_2024/scripts/snake_file_yam/snake_file_with_yaml.smk, line 136:
+Missing input files for rule peak_calling:
+    output: /homes/bilala/BedTools/Chipseq_2024/results/Peaks/SRR6823769_rep1_peaks.narrowPeak
+    wildcards: sample=SRR6823769, reads=rep1
+    affected files:
+        /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/SRR6823769_chip_rep1.bam
+        /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/SRR6823769_input_rep1.bam

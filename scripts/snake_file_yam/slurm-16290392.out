@@ -1,0 +1,698 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all                      1
+bam_index                3
+bam_to_bigwig            4
+filter_peaks             1
+narrowpeak_to_bed        4
+peak_calling             2
+total                   15
+
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver. Falling back to greedy solver. Run Snakemake with --verbose to see the full solver output for debugging the problem.
+
+[Mon Mar 11 18:05:40 2024]
+rule bam_to_bigwig:
+    input: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_input_rep1.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_chip_rep1.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_input_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_chip_rep1.bai
+    output: /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_input_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_chip_rep1.bw
+    jobid: 62
+    reason: Missing output files: /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_chip_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_input_rep1.bw
+    wildcards: sample=Mut, reads=rep1
+    resources: tmpdir=/tmp
+
+bamFilesList: ['/homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_input_rep1.bam']
+binLength: 20
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 20
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+bamFilesList: ['/homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_chip_rep1.bam']
+binLength: 20
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 20
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+[Mon Mar 11 18:29:01 2024]
+Finished job 62.
+1 of 15 steps (7%) done
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver. Falling back to greedy solver. Run Snakemake with --verbose to see the full solver output for debugging the problem.
+
+[Mon Mar 11 18:29:03 2024]
+rule peak_calling:
+    input: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_input_rep1.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_chip_rep1.bam
+    output: /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep1_peaks.narrowPeak
+    jobid: 52
+    reason: Updated input files: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_input_rep1.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_chip_rep1.bam
+    wildcards: sample=Mut, reads=rep1
+    resources: tmpdir=/tmp
+
+INFO  @ Mon, 11 Mar 2024 18:29:04: 
+# Command line: callpeak -t /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_chip_rep1.bam -c /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_input_rep1.bam -f BAM -g mm -n Mut_rep1 --outdir /homes/bilala/BedTools/Chipseq_2024/results/Peaks
+# ARGUMENTS LIST:
+# name = Mut_rep1
+# format = BAM
+# ChIP-seq file = ['/homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_chip_rep1.bam']
+# control file = ['/homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_input_rep1.bam']
+# effective genome size = 1.87e+09
+# band width = 300
+# model fold = [5, 50]
+# qvalue cutoff = 5.00e-02
+# The maximum gap between significant sites is assigned as the read length/tag size.
+# The minimum length of peaks is assigned as the predicted fragment length "d".
+# Larger dataset will be scaled towards smaller dataset.
+# Range for calculating regional lambda is: 1000 bps and 10000 bps
+# Broad region calling is off
+# Paired-End mode is off
+ 
+INFO  @ Mon, 11 Mar 2024 18:29:04: #1 read tag files... 
+INFO  @ Mon, 11 Mar 2024 18:29:04: #1 read treatment tags... 
+INFO  @ Mon, 11 Mar 2024 18:29:06:  1000000 
+INFO  @ Mon, 11 Mar 2024 18:29:07:  2000000 
+INFO  @ Mon, 11 Mar 2024 18:29:09:  3000000 
+INFO  @ Mon, 11 Mar 2024 18:29:10:  4000000 
+INFO  @ Mon, 11 Mar 2024 18:29:12:  5000000 
+INFO  @ Mon, 11 Mar 2024 18:29:13:  6000000 
+INFO  @ Mon, 11 Mar 2024 18:29:15:  7000000 
+INFO  @ Mon, 11 Mar 2024 18:29:16:  8000000 
+INFO  @ Mon, 11 Mar 2024 18:29:18:  9000000 
+INFO  @ Mon, 11 Mar 2024 18:29:19:  10000000 
+INFO  @ Mon, 11 Mar 2024 18:29:21:  11000000 
+INFO  @ Mon, 11 Mar 2024 18:29:22:  12000000 
+INFO  @ Mon, 11 Mar 2024 18:29:24:  13000000 
+INFO  @ Mon, 11 Mar 2024 18:29:25:  14000000 
+INFO  @ Mon, 11 Mar 2024 18:29:27:  15000000 
+INFO  @ Mon, 11 Mar 2024 18:29:28:  16000000 
+INFO  @ Mon, 11 Mar 2024 18:29:30:  17000000 
+INFO  @ Mon, 11 Mar 2024 18:29:31:  18000000 
+INFO  @ Mon, 11 Mar 2024 18:29:32:  19000000 
+INFO  @ Mon, 11 Mar 2024 18:29:34:  20000000 
+INFO  @ Mon, 11 Mar 2024 18:29:35:  21000000 
+INFO  @ Mon, 11 Mar 2024 18:29:37:  22000000 
+INFO  @ Mon, 11 Mar 2024 18:29:38:  23000000 
+INFO  @ Mon, 11 Mar 2024 18:29:39:  24000000 
+INFO  @ Mon, 11 Mar 2024 18:29:41:  25000000 
+INFO  @ Mon, 11 Mar 2024 18:29:42:  26000000 
+INFO  @ Mon, 11 Mar 2024 18:29:44:  27000000 
+INFO  @ Mon, 11 Mar 2024 18:29:45:  28000000 
+INFO  @ Mon, 11 Mar 2024 18:29:46:  29000000 
+INFO  @ Mon, 11 Mar 2024 18:29:48:  30000000 
+INFO  @ Mon, 11 Mar 2024 18:29:49:  31000000 
+INFO  @ Mon, 11 Mar 2024 18:29:51:  32000000 
+INFO  @ Mon, 11 Mar 2024 18:29:52:  33000000 
+INFO  @ Mon, 11 Mar 2024 18:29:54:  34000000 
+INFO  @ Mon, 11 Mar 2024 18:29:55:  35000000 
+INFO  @ Mon, 11 Mar 2024 18:29:57:  36000000 
+INFO  @ Mon, 11 Mar 2024 18:29:58: 36788618 reads have been read. 
+INFO  @ Mon, 11 Mar 2024 18:29:58: #1.2 read input tags... 
+INFO  @ Mon, 11 Mar 2024 18:30:00:  1000000 
+INFO  @ Mon, 11 Mar 2024 18:30:01:  2000000 
+INFO  @ Mon, 11 Mar 2024 18:30:03:  3000000 
+INFO  @ Mon, 11 Mar 2024 18:30:04:  4000000 
+INFO  @ Mon, 11 Mar 2024 18:30:06:  5000000 
+INFO  @ Mon, 11 Mar 2024 18:30:07:  6000000 
+INFO  @ Mon, 11 Mar 2024 18:30:09:  7000000 
+INFO  @ Mon, 11 Mar 2024 18:30:10:  8000000 
+INFO  @ Mon, 11 Mar 2024 18:30:12:  9000000 
+INFO  @ Mon, 11 Mar 2024 18:30:13:  10000000 
+INFO  @ Mon, 11 Mar 2024 18:30:15:  11000000 
+INFO  @ Mon, 11 Mar 2024 18:30:16:  12000000 
+INFO  @ Mon, 11 Mar 2024 18:30:18:  13000000 
+INFO  @ Mon, 11 Mar 2024 18:30:19:  14000000 
+INFO  @ Mon, 11 Mar 2024 18:30:21:  15000000 
+INFO  @ Mon, 11 Mar 2024 18:30:22:  16000000 
+INFO  @ Mon, 11 Mar 2024 18:30:24:  17000000 
+INFO  @ Mon, 11 Mar 2024 18:30:25:  18000000 
+INFO  @ Mon, 11 Mar 2024 18:30:27:  19000000 
+INFO  @ Mon, 11 Mar 2024 18:30:28:  20000000 
+INFO  @ Mon, 11 Mar 2024 18:30:30:  21000000 
+INFO  @ Mon, 11 Mar 2024 18:30:31:  22000000 
+INFO  @ Mon, 11 Mar 2024 18:30:32:  23000000 
+INFO  @ Mon, 11 Mar 2024 18:30:34:  24000000 
+INFO  @ Mon, 11 Mar 2024 18:30:35:  25000000 
+INFO  @ Mon, 11 Mar 2024 18:30:37:  26000000 
+INFO  @ Mon, 11 Mar 2024 18:30:38:  27000000 
+INFO  @ Mon, 11 Mar 2024 18:30:40:  28000000 
+INFO  @ Mon, 11 Mar 2024 18:30:41:  29000000 
+INFO  @ Mon, 11 Mar 2024 18:30:42:  30000000 
+INFO  @ Mon, 11 Mar 2024 18:30:44:  31000000 
+INFO  @ Mon, 11 Mar 2024 18:30:45:  32000000 
+INFO  @ Mon, 11 Mar 2024 18:30:47:  33000000 
+INFO  @ Mon, 11 Mar 2024 18:30:48:  34000000 
+INFO  @ Mon, 11 Mar 2024 18:30:50:  35000000 
+INFO  @ Mon, 11 Mar 2024 18:30:51:  36000000 
+INFO  @ Mon, 11 Mar 2024 18:30:52:  37000000 
+INFO  @ Mon, 11 Mar 2024 18:30:54:  38000000 
+INFO  @ Mon, 11 Mar 2024 18:30:55:  39000000 
+INFO  @ Mon, 11 Mar 2024 18:30:57:  40000000 
+INFO  @ Mon, 11 Mar 2024 18:30:58:  41000000 
+INFO  @ Mon, 11 Mar 2024 18:31:00:  42000000 
+INFO  @ Mon, 11 Mar 2024 18:31:01:  43000000 
+INFO  @ Mon, 11 Mar 2024 18:31:03:  44000000 
+INFO  @ Mon, 11 Mar 2024 18:31:04:  45000000 
+INFO  @ Mon, 11 Mar 2024 18:31:04: 45048786 reads have been read. 
+INFO  @ Mon, 11 Mar 2024 18:31:05: #1 tag size is determined as 50 bps 
+INFO  @ Mon, 11 Mar 2024 18:31:05: #1 tag size = 50.0 
+INFO  @ Mon, 11 Mar 2024 18:31:05: #1  total tags in treatment: 36788618 
+INFO  @ Mon, 11 Mar 2024 18:31:05: #1 user defined the maximum tags... 
+INFO  @ Mon, 11 Mar 2024 18:31:05: #1 filter out redundant tags at the same location and the same strand by allowing at most 1 tag(s) 
+INFO  @ Mon, 11 Mar 2024 18:31:05: #1  tags after filtering in treatment: 33287266 
+INFO  @ Mon, 11 Mar 2024 18:31:05: #1  Redundant rate of treatment: 0.10 
+INFO  @ Mon, 11 Mar 2024 18:31:05: #1  total tags in control: 45048786 
+INFO  @ Mon, 11 Mar 2024 18:31:05: #1 user defined the maximum tags... 
+INFO  @ Mon, 11 Mar 2024 18:31:05: #1 filter out redundant tags at the same location and the same strand by allowing at most 1 tag(s) 
+INFO  @ Mon, 11 Mar 2024 18:31:05: #1  tags after filtering in control: 44720171 
+INFO  @ Mon, 11 Mar 2024 18:31:05: #1  Redundant rate of control: 0.01 
+INFO  @ Mon, 11 Mar 2024 18:31:05: #1 finished! 
+INFO  @ Mon, 11 Mar 2024 18:31:05: #2 Build Peak Model... 
+INFO  @ Mon, 11 Mar 2024 18:31:05: #2 looking for paired plus/minus strand peaks... 
+INFO  @ Mon, 11 Mar 2024 18:31:08: #2 number of paired peaks: 576 
+WARNING @ Mon, 11 Mar 2024 18:31:08: Fewer paired peaks (576) than 1000! Model may not be build well! Lower your MFOLD parameter may erase this warning. Now I will use 576 pairs to build model! 
+INFO  @ Mon, 11 Mar 2024 18:31:08: start model_add_line... 
+INFO  @ Mon, 11 Mar 2024 18:31:08: start X-correlation... 
+INFO  @ Mon, 11 Mar 2024 18:31:08: end of X-cor 
+INFO  @ Mon, 11 Mar 2024 18:31:08: #2 finished! 
+INFO  @ Mon, 11 Mar 2024 18:31:08: #2 predicted fragment length is 153 bps 
+INFO  @ Mon, 11 Mar 2024 18:31:08: #2 alternative fragment length(s) may be 153 bps 
+INFO  @ Mon, 11 Mar 2024 18:31:08: #2.2 Generate R script for model : /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep1_model.r 
+INFO  @ Mon, 11 Mar 2024 18:31:08: #3 Call peaks... 
+INFO  @ Mon, 11 Mar 2024 18:31:08: #3 Pre-compute pvalue-qvalue table... 
+INFO  @ Mon, 11 Mar 2024 18:33:54: #3 Call peaks for each chromosome... 
+INFO  @ Mon, 11 Mar 2024 18:35:23: #4 Write output xls file... /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep1_peaks.xls 
+INFO  @ Mon, 11 Mar 2024 18:35:23: #4 Write peak in narrowPeak format file... /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep1_peaks.narrowPeak 
+INFO  @ Mon, 11 Mar 2024 18:35:23: #4 Write summits bed file... /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep1_summits.bed 
+INFO  @ Mon, 11 Mar 2024 18:35:23: Done! 
+[Mon Mar 11 18:35:23 2024]
+Finished job 52.
+2 of 15 steps (13%) done
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver. Falling back to greedy solver. Run Snakemake with --verbose to see the full solver output for debugging the problem.
+
+[Mon Mar 11 18:35:25 2024]
+rule bam_index:
+    input: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_input_rep2.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_chip_rep2.bam
+    output: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_input_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_chip_rep2.bai
+    jobid: 59
+    reason: Missing output files: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_chip_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_input_rep2.bai
+    wildcards: sample=Mut, reads=rep2
+    resources: tmpdir=/tmp
+
+[Mon Mar 11 18:36:19 2024]
+Finished job 59.
+3 of 15 steps (20%) done
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver. Falling back to greedy solver. Run Snakemake with --verbose to see the full solver output for debugging the problem.
+
+[Mon Mar 11 18:36:20 2024]
+rule bam_to_bigwig:
+    input: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_input_rep2.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_chip_rep2.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_input_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_chip_rep2.bai
+    output: /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_input_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_chip_rep2.bw
+    jobid: 63
+    reason: Input files updated by another job: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_chip_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_input_rep2.bai
+    wildcards: sample=Mut, reads=rep2
+    resources: tmpdir=/tmp
+
+bamFilesList: ['/homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_input_rep2.bam']
+binLength: 20
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 20
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+bamFilesList: ['/homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_chip_rep2.bam']
+binLength: 20
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 20
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+[Mon Mar 11 18:55:39 2024]
+Finished job 63.
+4 of 15 steps (27%) done
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver. Falling back to greedy solver. Run Snakemake with --verbose to see the full solver output for debugging the problem.
+
+[Mon Mar 11 18:55:40 2024]
+rule peak_calling:
+    input: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_input_rep2.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_chip_rep2.bam
+    output: /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep2_peaks.narrowPeak
+    jobid: 53
+    reason: Updated input files: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_chip_rep2.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_input_rep2.bam
+    wildcards: sample=Mut, reads=rep2
+    resources: tmpdir=/tmp
+
+INFO  @ Mon, 11 Mar 2024 18:55:40: 
+# Command line: callpeak -t /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_chip_rep2.bam -c /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_input_rep2.bam -f BAM -g mm -n Mut_rep2 --outdir /homes/bilala/BedTools/Chipseq_2024/results/Peaks
+# ARGUMENTS LIST:
+# name = Mut_rep2
+# format = BAM
+# ChIP-seq file = ['/homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_chip_rep2.bam']
+# control file = ['/homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/Mut_input_rep2.bam']
+# effective genome size = 1.87e+09
+# band width = 300
+# model fold = [5, 50]
+# qvalue cutoff = 5.00e-02
+# The maximum gap between significant sites is assigned as the read length/tag size.
+# The minimum length of peaks is assigned as the predicted fragment length "d".
+# Larger dataset will be scaled towards smaller dataset.
+# Range for calculating regional lambda is: 1000 bps and 10000 bps
+# Broad region calling is off
+# Paired-End mode is off
+ 
+INFO  @ Mon, 11 Mar 2024 18:55:40: #1 read tag files... 
+INFO  @ Mon, 11 Mar 2024 18:55:40: #1 read treatment tags... 
+INFO  @ Mon, 11 Mar 2024 18:55:42:  1000000 
+INFO  @ Mon, 11 Mar 2024 18:55:43:  2000000 
+INFO  @ Mon, 11 Mar 2024 18:55:45:  3000000 
+INFO  @ Mon, 11 Mar 2024 18:55:46:  4000000 
+INFO  @ Mon, 11 Mar 2024 18:55:48:  5000000 
+INFO  @ Mon, 11 Mar 2024 18:55:49:  6000000 
+INFO  @ Mon, 11 Mar 2024 18:55:51:  7000000 
+INFO  @ Mon, 11 Mar 2024 18:55:52:  8000000 
+INFO  @ Mon, 11 Mar 2024 18:55:54:  9000000 
+INFO  @ Mon, 11 Mar 2024 18:55:55:  10000000 
+INFO  @ Mon, 11 Mar 2024 18:55:57:  11000000 
+INFO  @ Mon, 11 Mar 2024 18:55:58:  12000000 
+INFO  @ Mon, 11 Mar 2024 18:56:00:  13000000 
+INFO  @ Mon, 11 Mar 2024 18:56:01:  14000000 
+INFO  @ Mon, 11 Mar 2024 18:56:03:  15000000 
+INFO  @ Mon, 11 Mar 2024 18:56:04:  16000000 
+INFO  @ Mon, 11 Mar 2024 18:56:06:  17000000 
+INFO  @ Mon, 11 Mar 2024 18:56:07:  18000000 
+INFO  @ Mon, 11 Mar 2024 18:56:09:  19000000 
+INFO  @ Mon, 11 Mar 2024 18:56:10:  20000000 
+INFO  @ Mon, 11 Mar 2024 18:56:11:  21000000 
+INFO  @ Mon, 11 Mar 2024 18:56:13:  22000000 
+INFO  @ Mon, 11 Mar 2024 18:56:14:  23000000 
+INFO  @ Mon, 11 Mar 2024 18:56:16:  24000000 
+INFO  @ Mon, 11 Mar 2024 18:56:17:  25000000 
+INFO  @ Mon, 11 Mar 2024 18:56:18:  26000000 
+INFO  @ Mon, 11 Mar 2024 18:56:20:  27000000 
+INFO  @ Mon, 11 Mar 2024 18:56:21:  28000000 
+INFO  @ Mon, 11 Mar 2024 18:56:23:  29000000 
+INFO  @ Mon, 11 Mar 2024 18:56:24:  30000000 
+INFO  @ Mon, 11 Mar 2024 18:56:26:  31000000 
+INFO  @ Mon, 11 Mar 2024 18:56:27: 31824471 reads have been read. 
+INFO  @ Mon, 11 Mar 2024 18:56:27: #1.2 read input tags... 
+INFO  @ Mon, 11 Mar 2024 18:56:29:  1000000 
+INFO  @ Mon, 11 Mar 2024 18:56:30:  2000000 
+INFO  @ Mon, 11 Mar 2024 18:56:31:  3000000 
+INFO  @ Mon, 11 Mar 2024 18:56:33:  4000000 
+INFO  @ Mon, 11 Mar 2024 18:56:34:  5000000 
+INFO  @ Mon, 11 Mar 2024 18:56:36:  6000000 
+INFO  @ Mon, 11 Mar 2024 18:56:38:  7000000 
+INFO  @ Mon, 11 Mar 2024 18:56:39:  8000000 
+INFO  @ Mon, 11 Mar 2024 18:56:41:  9000000 
+INFO  @ Mon, 11 Mar 2024 18:56:42:  10000000 
+INFO  @ Mon, 11 Mar 2024 18:56:44:  11000000 
+INFO  @ Mon, 11 Mar 2024 18:56:45:  12000000 
+INFO  @ Mon, 11 Mar 2024 18:56:46:  13000000 
+INFO  @ Mon, 11 Mar 2024 18:56:48:  14000000 
+INFO  @ Mon, 11 Mar 2024 18:56:49:  15000000 
+INFO  @ Mon, 11 Mar 2024 18:56:51:  16000000 
+INFO  @ Mon, 11 Mar 2024 18:56:52:  17000000 
+INFO  @ Mon, 11 Mar 2024 18:56:54:  18000000 
+INFO  @ Mon, 11 Mar 2024 18:56:56:  19000000 
+INFO  @ Mon, 11 Mar 2024 18:56:57:  20000000 
+INFO  @ Mon, 11 Mar 2024 18:56:59:  21000000 
+INFO  @ Mon, 11 Mar 2024 18:57:00:  22000000 
+INFO  @ Mon, 11 Mar 2024 18:57:02:  23000000 
+INFO  @ Mon, 11 Mar 2024 18:57:03:  24000000 
+INFO  @ Mon, 11 Mar 2024 18:57:05:  25000000 
+INFO  @ Mon, 11 Mar 2024 18:57:06:  26000000 
+INFO  @ Mon, 11 Mar 2024 18:57:08:  27000000 
+INFO  @ Mon, 11 Mar 2024 18:57:09:  28000000 
+INFO  @ Mon, 11 Mar 2024 18:57:11:  29000000 
+INFO  @ Mon, 11 Mar 2024 18:57:12:  30000000 
+INFO  @ Mon, 11 Mar 2024 18:57:14:  31000000 
+INFO  @ Mon, 11 Mar 2024 18:57:15:  32000000 
+INFO  @ Mon, 11 Mar 2024 18:57:17:  33000000 
+INFO  @ Mon, 11 Mar 2024 18:57:17: 33139166 reads have been read. 
+INFO  @ Mon, 11 Mar 2024 18:57:17: #1 tag size is determined as 50 bps 
+INFO  @ Mon, 11 Mar 2024 18:57:17: #1 tag size = 50.0 
+INFO  @ Mon, 11 Mar 2024 18:57:17: #1  total tags in treatment: 31824471 
+INFO  @ Mon, 11 Mar 2024 18:57:17: #1 user defined the maximum tags... 
+INFO  @ Mon, 11 Mar 2024 18:57:17: #1 filter out redundant tags at the same location and the same strand by allowing at most 1 tag(s) 
+INFO  @ Mon, 11 Mar 2024 18:57:17: #1  tags after filtering in treatment: 28921026 
+INFO  @ Mon, 11 Mar 2024 18:57:17: #1  Redundant rate of treatment: 0.09 
+INFO  @ Mon, 11 Mar 2024 18:57:17: #1  total tags in control: 33139166 
+INFO  @ Mon, 11 Mar 2024 18:57:17: #1 user defined the maximum tags... 
+INFO  @ Mon, 11 Mar 2024 18:57:17: #1 filter out redundant tags at the same location and the same strand by allowing at most 1 tag(s) 
+INFO  @ Mon, 11 Mar 2024 18:57:17: #1  tags after filtering in control: 32950599 
+INFO  @ Mon, 11 Mar 2024 18:57:17: #1  Redundant rate of control: 0.01 
+INFO  @ Mon, 11 Mar 2024 18:57:17: #1 finished! 
+INFO  @ Mon, 11 Mar 2024 18:57:17: #2 Build Peak Model... 
+INFO  @ Mon, 11 Mar 2024 18:57:17: #2 looking for paired plus/minus strand peaks... 
+INFO  @ Mon, 11 Mar 2024 18:57:20: #2 number of paired peaks: 599 
+WARNING @ Mon, 11 Mar 2024 18:57:20: Fewer paired peaks (599) than 1000! Model may not be build well! Lower your MFOLD parameter may erase this warning. Now I will use 599 pairs to build model! 
+INFO  @ Mon, 11 Mar 2024 18:57:20: start model_add_line... 
+INFO  @ Mon, 11 Mar 2024 18:57:20: start X-correlation... 
+INFO  @ Mon, 11 Mar 2024 18:57:20: end of X-cor 
+INFO  @ Mon, 11 Mar 2024 18:57:20: #2 finished! 
+INFO  @ Mon, 11 Mar 2024 18:57:20: #2 predicted fragment length is 148 bps 
+INFO  @ Mon, 11 Mar 2024 18:57:20: #2 alternative fragment length(s) may be 148 bps 
+INFO  @ Mon, 11 Mar 2024 18:57:20: #2.2 Generate R script for model : /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep2_model.r 
+INFO  @ Mon, 11 Mar 2024 18:57:20: #3 Call peaks... 
+INFO  @ Mon, 11 Mar 2024 18:57:20: #3 Pre-compute pvalue-qvalue table... 
+INFO  @ Mon, 11 Mar 2024 18:59:27: #3 Call peaks for each chromosome... 
+INFO  @ Mon, 11 Mar 2024 19:00:34: #4 Write output xls file... /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep2_peaks.xls 
+INFO  @ Mon, 11 Mar 2024 19:00:34: #4 Write peak in narrowPeak format file... /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep2_peaks.narrowPeak 
+INFO  @ Mon, 11 Mar 2024 19:00:34: #4 Write summits bed file... /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep2_summits.bed 
+INFO  @ Mon, 11 Mar 2024 19:00:34: Done! 
+[Mon Mar 11 19:00:34 2024]
+Finished job 53.
+5 of 15 steps (33%) done
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver. Falling back to greedy solver. Run Snakemake with --verbose to see the full solver output for debugging the problem.
+
+[Mon Mar 11 19:00:35 2024]
+rule bam_index:
+    input: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/WT_input_rep2.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/WT_chip_rep2.bam
+    output: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep2.bai
+    jobid: 57
+    reason: Missing output files: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep2.bai
+    wildcards: sample=WT, reads=rep2
+    resources: tmpdir=/tmp
+
+[Mon Mar 11 19:01:01 2024]
+Finished job 57.
+6 of 15 steps (40%) done
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver. Falling back to greedy solver. Run Snakemake with --verbose to see the full solver output for debugging the problem.
+
+[Mon Mar 11 19:01:02 2024]
+rule bam_to_bigwig:
+    input: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/WT_input_rep2.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/WT_chip_rep2.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep2.bai
+    output: /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_input_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_chip_rep2.bw
+    jobid: 61
+    reason: Input files updated by another job: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep2.bai
+    wildcards: sample=WT, reads=rep2
+    resources: tmpdir=/tmp
+
+bamFilesList: ['/homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/WT_input_rep2.bam']
+binLength: 20
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 20
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+bamFilesList: ['/homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/WT_chip_rep2.bam']
+binLength: 20
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 20
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+[Mon Mar 11 19:12:06 2024]
+Finished job 61.
+7 of 15 steps (47%) done
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver. Falling back to greedy solver. Run Snakemake with --verbose to see the full solver output for debugging the problem.
+
+[Mon Mar 11 19:12:07 2024]
+rule bam_index:
+    input: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/WT_input_rep1.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/WT_chip_rep1.bam
+    output: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep1.bai
+    jobid: 56
+    reason: Missing output files: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep1.bai
+    wildcards: sample=WT, reads=rep1
+    resources: tmpdir=/tmp
+
+[Mon Mar 11 19:12:27 2024]
+Finished job 56.
+8 of 15 steps (53%) done
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver. Falling back to greedy solver. Run Snakemake with --verbose to see the full solver output for debugging the problem.
+
+[Mon Mar 11 19:12:29 2024]
+rule bam_to_bigwig:
+    input: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/WT_input_rep1.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/WT_chip_rep1.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep1.bai
+    output: /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_input_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_chip_rep1.bw
+    jobid: 60
+    reason: Input files updated by another job: /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep1.bai
+    wildcards: sample=WT, reads=rep1
+    resources: tmpdir=/tmp
+
+bamFilesList: ['/homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/WT_input_rep1.bam']
+binLength: 20
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 20
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+bamFilesList: ['/homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/WT_chip_rep1.bam']
+binLength: 20
+numberOfSamples: None
+blackListFileName: None
+skipZeroOverZero: False
+bed_and_bin: False
+genomeChunkSize: None
+defaultFragmentLength: read length
+numberOfProcessors: 1
+verbose: False
+region: None
+bedFile: None
+minMappingQuality: None
+ignoreDuplicates: False
+chrsToSkip: []
+stepSize: 20
+center_read: False
+samFlag_include: None
+samFlag_exclude: None
+minFragmentLength: 0
+maxFragmentLength: 0
+zerosToNans: False
+smoothLength: None
+save_data: False
+out_file_for_raw_data: None
+maxPairedFragmentLength: 1000
+[Mon Mar 11 19:22:01 2024]
+Finished job 60.
+9 of 15 steps (60%) done
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver. Falling back to greedy solver. Run Snakemake with --verbose to see the full solver output for debugging the problem.
+
+[Mon Mar 11 19:22:02 2024]
+rule narrowpeak_to_bed:
+    input: /homes/bilala/BedTools/Chipseq_2024/results/Peaks/WT_rep2_peaks.narrowPeak
+    output: /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/WT_rep2_peaks.bed
+    jobid: 65
+    reason: Missing output files: /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/WT_rep2_peaks.bed
+    wildcards: sample=WT, reads=rep2
+    resources: tmpdir=/tmp
+
+[Mon Mar 11 19:22:03 2024]
+Finished job 65.
+10 of 15 steps (67%) done
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver. Falling back to greedy solver. Run Snakemake with --verbose to see the full solver output for debugging the problem.
+
+[Mon Mar 11 19:22:03 2024]
+rule filter_peaks:
+    input: /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep1_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep2_peaks.narrowPeak
+    output: /homes/bilala/BedTools/Chipseq_2024/results/Final_peaks/Mut_filtered_peaks.narrowPeak
+    jobid: 55
+    reason: Input files updated by another job: /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep1_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep2_peaks.narrowPeak
+    wildcards: sample=Mut
+    resources: tmpdir=/tmp
+
+[Mon Mar 11 19:22:03 2024]
+Finished job 55.
+11 of 15 steps (73%) done
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver. Falling back to greedy solver. Run Snakemake with --verbose to see the full solver output for debugging the problem.
+
+[Mon Mar 11 19:22:03 2024]
+rule narrowpeak_to_bed:
+    input: /homes/bilala/BedTools/Chipseq_2024/results/Peaks/WT_rep1_peaks.narrowPeak
+    output: /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/WT_rep1_peaks.bed
+    jobid: 64
+    reason: Missing output files: /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/WT_rep1_peaks.bed
+    wildcards: sample=WT, reads=rep1
+    resources: tmpdir=/tmp
+
+[Mon Mar 11 19:22:03 2024]
+Finished job 64.
+12 of 15 steps (80%) done
+Select jobs to execute...
+Failed to solve scheduling problem with ILP solver. Falling back to greedy solver. Run Snakemake with --verbose to see the full solver output for debugging the problem.
+
+[Mon Mar 11 19:22:03 2024]
+rule narrowpeak_to_bed:
+    input: /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep1_peaks.narrowPeak
+    output: /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/Mut_rep1_peaks.bed
+    jobid: 66
+    reason: Missing output files: /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/Mut_rep1_peaks.bed; Input files updated by another job: /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep1_peaks.narrowPeak
+    wildcards: sample=Mut, reads=rep1
+    resources: tmpdir=/tmp
+
+[Mon Mar 11 19:22:03 2024]
+Finished job 66.
+13 of 15 steps (87%) done
+Select jobs to execute...
+
+[Mon Mar 11 19:22:03 2024]
+rule narrowpeak_to_bed:
+    input: /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep2_peaks.narrowPeak
+    output: /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/Mut_rep2_peaks.bed
+    jobid: 67
+    reason: Missing output files: /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/Mut_rep2_peaks.bed; Input files updated by another job: /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep2_peaks.narrowPeak
+    wildcards: sample=Mut, reads=rep2
+    resources: tmpdir=/tmp
+
+[Mon Mar 11 19:22:03 2024]
+Finished job 67.
+14 of 15 steps (93%) done
+Select jobs to execute...
+
+[Mon Mar 11 19:22:03 2024]
+localrule all:
+    input: /homes/bilala/BedTools/Chipseq_2024/data/raw_data/SRR6823773.fastq, /homes/bilala/BedTools/Chipseq_2024/data/raw_data/SRR6823772.fastq, /homes/bilala/BedTools/Chipseq_2024/data/raw_data/SRR6823771.fastq, /homes/bilala/BedTools/Chipseq_2024/data/raw_data/SRR6823770.fastq, /homes/bilala/BedTools/Chipseq_2024/data/raw_data/SRR6823769.fastq, /homes/bilala/BedTools/Chipseq_2024/data/raw_data/SRR6823767.fastq, /homes/bilala/BedTools/Chipseq_2024/data/raw_data/SRR6823765.fastq, /homes/bilala/BedTools/Chipseq_2024/data/raw_data/SRR6823762.fastq, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823773_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823772_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823771_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823770_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823769_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823767_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823765_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823762_fastqc.html, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823773_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823772_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823771_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823770_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823769_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823767_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823765_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/results/FASTQC/SRR6823762_fastqc.zip, /homes/bilala/BedTools/Chipseq_2024/data/trimmed_data/SRR6823773_fastp.fastq, /homes/bilala/BedTools/Chipseq_2024/data/trimmed_data/SRR6823772_fastp.fastq, /homes/bilala/BedTools/Chipseq_2024/data/trimmed_data/SRR6823771_fastp.fastq, /homes/bilala/BedTools/Chipseq_2024/data/trimmed_data/SRR6823770_fastp.fastq, /homes/bilala/BedTools/Chipseq_2024/data/trimmed_data/SRR6823769_fastp.fastq, /homes/bilala/BedTools/Chipseq_2024/data/trimmed_data/SRR6823767_fastp.fastq, /homes/bilala/BedTools/Chipseq_2024/data/trimmed_data/SRR6823765_fastp.fastq, /homes/bilala/BedTools/Chipseq_2024/data/trimmed_data/SRR6823762_fastp.fastq, /homes/bilala/BedTools/Chipseq_2024/data/reference_data/genome_index/mm10.1.bt2, /homes/bilala/BedTools/Chipseq_2024/data/reference_data/genome_index/mm10.2.bt2, /homes/bilala/BedTools/Chipseq_2024/data/reference_data/genome_index/mm10.3.bt2, /homes/bilala/BedTools/Chipseq_2024/data/reference_data/genome_index/mm10.4.bt2, /homes/bilala/BedTools/Chipseq_2024/data/reference_data/genome_index/mm10.rev.1.bt2, /homes/bilala/BedTools/Chipseq_2024/data/reference_data/genome_index/mm10.rev.2.bt2, /homes/bilala/BedTools/Chipseq_2024/results/alignment/bowtie2_alignment/SRR6823773.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/bowtie2_alignment/SRR6823772.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/bowtie2_alignment/SRR6823771.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/bowtie2_alignment/SRR6823770.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/bowtie2_alignment/SRR6823769.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/bowtie2_alignment/SRR6823767.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/bowtie2_alignment/SRR6823765.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/bowtie2_alignment/SRR6823762.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_bam/SRR6823773_sorted.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_bam/SRR6823772_sorted.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_bam/SRR6823771_sorted.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_bam/SRR6823770_sorted.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_bam/SRR6823769_sorted.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_bam/SRR6823767_sorted.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_bam/SRR6823765_sorted.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_bam/SRR6823762_sorted.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/SRR6823773_sorted_rmdup.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/SRR6823772_sorted_rmdup.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/SRR6823771_sorted_rmdup.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/SRR6823770_sorted_rmdup.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/SRR6823769_sorted_rmdup.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/SRR6823767_sorted_rmdup.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/SRR6823765_sorted_rmdup.bam, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam/SRR6823762_sorted_rmdup.bam, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/WT_rep1_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/WT_rep2_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep1_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep2_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep1_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep2_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep1_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep2_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep1_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep2_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/WT_rep1_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/WT_rep2_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/WT_rep1_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/WT_rep2_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/WT_rep1_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/WT_rep2_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Final_peaks/WT_filtered_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Final_peaks/Mut_filtered_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Final_peaks/Mut_filtered_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Final_peaks/Mut_filtered_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Final_peaks/Mut_filtered_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Final_peaks/WT_filtered_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Final_peaks/WT_filtered_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Final_peaks/WT_filtered_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_input_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_input_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_input_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_input_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_input_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_input_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_input_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_input_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_chip_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_chip_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_chip_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_chip_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_chip_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_chip_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_chip_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_chip_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_input_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_input_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_input_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_input_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_input_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_input_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_input_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_input_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_input_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_input_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_input_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_input_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_input_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_input_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_input_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_input_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_chip_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_chip_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_chip_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_chip_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_chip_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_chip_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_chip_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_chip_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_chip_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_chip_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_chip_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_chip_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_chip_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_chip_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_chip_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_chip_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/WT_rep1_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/WT_rep2_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/Mut_rep1_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/Mut_rep2_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/Mut_rep1_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/Mut_rep2_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/Mut_rep1_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/Mut_rep2_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/Mut_rep1_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/Mut_rep2_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/WT_rep1_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/WT_rep2_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/WT_rep1_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/WT_rep2_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/WT_rep1_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/WT_rep2_peaks.bed
+    jobid: 0
+    reason: Input files updated by another job: /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_input_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_chip_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/WT_rep2_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_input_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/Mut_rep2_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep1.bai, /homes/bilala/BedTools/Chipseq_2024/results/Final_peaks/Mut_filtered_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep1_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_input_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/Peaks/Mut_rep2_peaks.narrowPeak, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/Mut_rep1_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_input_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_chip_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_input_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_input_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/visualization/Bed_Files/WT_rep1_peaks.bed, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/Mut_chip_rep2.bw, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/Mut_chip_rep2.bai, /homes/bilala/BedTools/Chipseq_2024/results/visualization/bigWig/WT_chip_rep1.bw, /homes/bilala/BedTools/Chipseq_2024/results/alignment/sorted_redup_bam_indices/WT_chip_rep1.bai
+    resources: tmpdir=/tmp
+
+[Mon Mar 11 19:22:03 2024]
+Finished job 0.
+15 of 15 steps (100%) done
+Complete log: .snakemake/log/2024-03-11T180519.023749.snakemake.log

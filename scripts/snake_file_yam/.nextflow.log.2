@@ -1,0 +1,91 @@
+Mar-18 18:42:20.105 [main] DEBUG nextflow.cli.Launcher - $> nextflow run /homes/bilala/BedTools/Nextflow/nextflow.nf -process.echo
+Mar-18 18:42:20.172 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.10.1
+Mar-18 18:42:20.218 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/homes/bilala/.nextflow/plugins; core-plugins: nf-amazon@1.11.0,nf-azure@0.14.2,nf-codecommit@0.1.2,nf-console@1.0.4,nf-ga4gh@1.0.4,nf-google@1.4.4,nf-tower@1.5.5,nf-wave@0.5.2
+Mar-18 18:42:20.234 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Mar-18 18:42:20.235 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Mar-18 18:42:20.238 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Mar-18 18:42:20.248 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Mar-18 18:42:20.268 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /homes/bilala/BedTools/Nextflow/nextflow.config
+Mar-18 18:42:20.270 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /homes/bilala/BedTools/Nextflow/nextflow.config
+Mar-18 18:42:20.292 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Mar-18 18:42:20.937 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Mar-18 18:42:20.947 [main] INFO  nextflow.cli.CmdRun - Launching `/homes/bilala/BedTools/Nextflow/nextflow.nf` [grave_goldberg] DSL2 - revision: 1a228d36da
+Mar-18 18:42:20.948 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Mar-18 18:42:20.948 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Mar-18 18:42:21.447 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /homes/bilala/.nextflow/secrets/store.json
+Mar-18 18:42:21.455 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@45b32dfe] - activable => nextflow.secret.LocalSecretsProvider@45b32dfe
+Mar-18 18:42:21.885 [main] DEBUG nextflow.Session - Session UUID: 39230014-8b57-4bf5-86ea-73b6a82895ed
+Mar-18 18:42:21.886 [main] DEBUG nextflow.Session - Run name: grave_goldberg
+Mar-18 18:42:21.886 [main] DEBUG nextflow.Session - Executor pool size: 4
+Mar-18 18:42:21.905 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-18 18:42:21.935 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.10.1 build 5829
+  Created: 27-10-2022 18:39 UTC (13:39 CDT)
+  System: Linux 3.10.0-1160.105.1.el7.x86_64
+  Runtime: Groovy 3.0.13 on OpenJDK 64-Bit Server VM 11.0.2+9
+  Encoding: UTF-8 (UTF-8)
+  Process: 1257081@hero13 [10.5.40.13]
+  CPUs: 4 - Mem: 125.6 GB (103.4 GB) - Swap: 4 GB (3.2 GB)
+Mar-18 18:42:21.997 [main] DEBUG nextflow.Session - Work-dir: /homes/bilala/BedTools/Chipseq_2024/scripts/snake_file_yam/work [ceph]
+Mar-18 18:42:21.998 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /homes/bilala/BedTools/Nextflow/bin
+Mar-18 18:42:22.087 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[GoogleLifeSciencesExecutor, AwsBatchExecutor, GoogleBatchExecutor]
+Mar-18 18:42:22.109 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Mar-18 18:42:22.113 [main] DEBUG nextflow.Session - Observer factory: TowerFactory
+Mar-18 18:42:22.136 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Mar-18 18:42:22.331 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 5; maxThreads: 1000
+Mar-18 18:42:22.684 [main] DEBUG nextflow.Session - Session start
+Mar-18 18:42:23.229 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Mar-18 18:42:23.358 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-18 18:42:23.358 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-18 18:42:23.365 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Mar-18 18:42:23.372 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=4; memory=125.6 GB; capacity=4; pollInterval=100ms; dumpInterval=5m
+Mar-18 18:42:23.568 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-18 18:42:23.568 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-18 18:42:23.572 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: run_fastqc, DownloadData
+Mar-18 18:42:23.572 [main] DEBUG nextflow.Session - Igniting dataflow network (3)
+Mar-18 18:42:23.572 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > DownloadData
+Mar-18 18:42:23.581 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /homes/bilala/BedTools/Nextflow/fastq/; pattern: *.fastq; options: [:]
+Mar-18 18:42:23.585 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > run_fastqc
+Mar-18 18:42:23.592 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Mar-18 18:42:23.592 [main] DEBUG nextflow.Session - Session await
+Mar-18 18:42:23.778 [Actor Thread 5] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /homes/bilala/BedTools/Chipseq_2024/scripts/snake_file_yam/SRRA.txt -- Cause: java.nio.file.NoSuchFileException: /homes/bilala/BedTools/Chipseq_2024/scripts/snake_file_yam/SRRA.txt
+Mar-18 18:42:23.877 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-18 18:42:23.878 [Task submitter] INFO  nextflow.Session - [06/e73e20] Submitted process > DownloadData (Download data from SRA)
+Mar-18 18:42:23.891 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-18 18:42:23.895 [Task submitter] INFO  nextflow.Session - [f6/297d7e] Submitted process > run_fastqc (Running FastQC)
+Mar-18 18:42:23.902 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-18 18:42:23.902 [Task submitter] INFO  nextflow.Session - [fd/0e2da7] Submitted process > run_fastqc (Running FastQC)
+Mar-18 18:42:24.701 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: DownloadData (Download data from SRA); status: COMPLETED; exit: 0; error: -; workDir: /homes/bilala/BedTools/Chipseq_2024/scripts/snake_file_yam/work/06/e73e20d1b882710a97b9816cf58e32]
+Mar-18 18:42:24.909 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'DownloadData (Download data from SRA)'
+
+Caused by:
+  Missing output file(s) `*.fastq` expected by process `DownloadData (Download data from SRA)`
+
+Command executed:
+
+  echo "Downloading data for SRRA.txt"
+  
+  module load SRA-Toolkit
+  
+  cat SRRA.txt | xargs -I {} fastq-dump --outdir /homes/bilala/BedTools/Nextflow/fastq  {}
+
+Command exit status:
+  0
+
+Command output:
+  Downloading data for SRRA.txt
+
+Command error:
+  cat: SRRA.txt: No such file or directory
+
+Work dir:
+  /homes/bilala/BedTools/Chipseq_2024/scripts/snake_file_yam/work/06/e73e20d1b882710a97b9816cf58e32
+
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
+Mar-18 18:42:24.930 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Missing output file(s) `*.fastq` expected by process `DownloadData (Download data from SRA)`
+Mar-18 18:42:24.953 [main] DEBUG nextflow.Session - Session await > all processes finished
+Mar-18 18:42:24.953 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Mar-18 18:42:24.966 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (2)
+Mar-18 18:42:25.094 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=1; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=2; succeedDuration=0ms; failedDuration=788ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=3; peakCpus=3; peakMemory=0; ]
+Mar-18 18:42:25.331 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Mar-18 18:42:25.356 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
